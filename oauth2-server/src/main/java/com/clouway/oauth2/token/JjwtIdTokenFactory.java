@@ -42,7 +42,12 @@ public class JjwtIdTokenFactory implements IdTokenFactory {
     claims.put("email", identity.email());
     claims.put("given_name", identity.givenName());
     claims.put("family_name", identity.familyName());
-    claims.putAll(identity.claims());
+
+    // CB - PATCH - we do not want to add more claims to the JWT token
+    // (because the /userinfo endpoint will already list those)
+    // TODO - separate claims from other informations we want listed in userinfo
+    
+    //claims.putAll(identity.claims());
 
     return Optional.of(Jwts.builder()
             .setHeaderParam("cid", signingKey.keyId)//CertificateId - the ID of the certificate that the token was signed with.
