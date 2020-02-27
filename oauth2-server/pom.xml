@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.clouway.security</groupId>
   <artifactId>oauth2-server</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.6-jwt-patch</version>
   <name>oauth2-server</name>
   <url>http://github.com/clouway/oauth2-server</url>
 
